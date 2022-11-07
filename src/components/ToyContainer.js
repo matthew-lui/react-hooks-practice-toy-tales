@@ -1,12 +1,10 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({toys}) {
-  return (
-    <div id="toy-collection">{
+function ToyContainer({toys, handleDelete, handleClickLikes}) {
 
-      toys.map(toy => <ToyCard key={toy.id} key={toy.id}/>)
-    }
+  return (
+    <div id="toy-collection">{toys.map((toy) => (<ToyCard key={toy.id} toy={toy} handleDelete={handleDelete} handleClickLikes={handleClickLikes}/>))}
     </div>
   );
 }
